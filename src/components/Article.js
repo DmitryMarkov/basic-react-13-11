@@ -20,7 +20,7 @@ class Article extends Component {
   render () {
     const {article} = this.props
     const body = this.state.isOpen && <section>{article.text}</section>
-    const comments = this.state.commentsShown && <CommentList comments={article.comments} />
+    const comments = this.state.commentsShown && article.comments && <CommentList comments={article.comments} />
     return (
       <div>
         <h2>
