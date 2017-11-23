@@ -1,5 +1,6 @@
 //HOC === Higher Order Component === decorator
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default (OriginalComponent) => class DecoratedComponent extends React.Component {
   state = {
