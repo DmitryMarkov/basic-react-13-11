@@ -5,7 +5,11 @@ export default (OriginalComponent) => class AccordeonComponent extends React.Com
     openedArticleId: null
   }
 
-  toggleOpenArticle = openedArticleId => this.setState({openedArticleId})
+  toggleOpenArticle = openedArticleId => this.setState({
+    openedArticleId: this.state.openedArticleId === openedArticleId
+      ? null
+      : openedArticleId
+  })
 
   render () {
     return (
