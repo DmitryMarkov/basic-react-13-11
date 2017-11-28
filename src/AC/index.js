@@ -1,8 +1,9 @@
 import { INCREMENT, DELETE_ARTICLE } from '../constants'
 
 export function increment () {
-  const action = {type: INCREMENT}
-  return action
+  return {
+    type: INCREMENT
+  }
 }
 
 export function deleteArticle (id) {
