@@ -1,16 +1,28 @@
-import { SELECT_ARTICLE } from '../constants'
+import { SELECT_ARTICLE, SET_RANGE } from '../constants'
 
-export default ({ selected = null, from = null, to = null } = {}, action) => {
+export default (
+  {
+    selected = null,
+    range = {
+      from: null,
+      to: null
+    }
+  } = {},
+  action) => {
   const { type, payload } = action
 
   switch (type) {
     case SELECT_ARTICLE:
       return {
         selected: payload.selected,
-        from,
-        to
+        range
+      }
+    case SET_RANGE:
+      return {
+        selected,
+        range: payload.range
       }
   }
 
-  return { selected, from, to }
+  return { selected, range }
 }

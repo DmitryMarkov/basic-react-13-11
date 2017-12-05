@@ -1,4 +1,4 @@
-import { INCREMENT, DELETE_ARTICLE, SELECT_ARTICLE } from '../constants'
+import { INCREMENT, DELETE_ARTICLE, SELECT_ARTICLE, SET_RANGE } from '../constants'
 
 export function increment () {
   return {
@@ -17,5 +17,12 @@ export function selectArticle (selected) {
   return {
     type: SELECT_ARTICLE,
     payload: {selected}
+  }
+}
+
+export function setRange (range) {
+  return {
+    type: SET_RANGE,
+    payload: {range}
   }
 }
