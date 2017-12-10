@@ -7,29 +7,29 @@ import { changeSelection } from '../../AC'
 import 'react-select/dist/react-select.css'
 
 class SelectFilter extends Component {
-    static propTypes = {
-        articles: PropTypes.array.isRequired
-    };
+  static propTypes = {
+    articles: PropTypes.array.isRequired
+  };
 
-    handleChange = selected => this.props.changeSelection(selected.map(option => option.value))
+  handleChange = selected => this.props.changeSelection(selected.map(option => option.value))
 
-    render() {
-        const { articles, selected } = this.props
-        const options = articles.map(article => ({
-            label: article.title,
-            value: article.id
-        }))
+  render () {
+    const {articles, selected} = this.props
+    const options = articles.map(article => ({
+      label: article.title,
+      value: article.id
+    }))
 
-        return <Select
-            options={options}
-            value={selected}
-            onChange={this.handleChange}
-            multi
-        />
-    }
+    return <Select
+      options={options}
+      value={selected}
+      onChange={this.handleChange}
+      multi
+    />
+  }
 }
 
 export default connect(state => ({
-    selected: state.filters.selected,
-    articles: state.articles
-}), { changeSelection })(SelectFilter)
+  selected: state.filters.selected,
+  articles: state.articles
+}), {changeSelection})(SelectFilter)
