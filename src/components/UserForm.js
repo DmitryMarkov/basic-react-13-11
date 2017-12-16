@@ -16,7 +16,6 @@ class UserForm extends Component {
   }
 
   render () {
-    console.log('---', this.state)
     return (
       <div>
         Username: <input value={this.state.user} onChange={this.handleChange}/>

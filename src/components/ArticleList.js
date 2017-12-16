@@ -7,7 +7,6 @@ import { filtratedArticlesSelector } from '../selectors'
 
 class ArticleList extends Accordion {
   render () {
-    console.log('---', 2)
     const {articles} = this.props
     if (!articles.length) return <h3>No Articles</h3>
     const articleElements = articles.map((article) => <li key={article.id}>
@@ -33,7 +32,7 @@ ArticleList.propTypes = {
 }
 
 export default connect(state => {
-  console.log('---', 0)
+  // console.log('---', 0)
   return {
     articles: filtratedArticlesSelector(state)
   }
